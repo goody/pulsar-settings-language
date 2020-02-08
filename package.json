@@ -1,0 +1,25 @@
+{
+    "name": "pulsar-settings-language",
+    "displayName": "Pulsar Settings Language",
+    "description": "Luminix Pulsar syntax",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "psl",
+            "aliases": ["Pulsar Settings Language", "psl"],
+            "extensions": [".psl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "psl",
+            "scopeName": "source.psl",
+            "path": "./syntaxes/psl.tmLanguage.json"
+        }]
+    }
+}
