@@ -20,12 +20,6 @@
             "language": "psl",
             "scopeName": "source.psl",
             "path": "./syntaxes/psl.tmLanguage.json"
-        }],
-        "snippets": [
-            {
-              "language": "psl",
-              "path": "./snippets.json"
-            }
-          ]
+        }]
     }
 }
