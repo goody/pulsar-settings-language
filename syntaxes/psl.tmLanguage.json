@@ -7,9 +7,18 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#blocks"
 		}
 	],
 	"repository": {
+		"blocks": {
+			"patterns": [{
+				"name": "constant.character.escape",
+				"match": "\\b(DEFAULT|SUCCESS|EXIT)\\b"
+			}]
+		},
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.psl",
