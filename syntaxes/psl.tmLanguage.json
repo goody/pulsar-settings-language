@@ -14,10 +14,7 @@
 	],
 	"repository": {
 		"blocks": {
-			"patterns": [{
-				"name": "constant.character.escape",
-				"match": "\\b(DEFAULT|SUCCESS|EXIT)\\b"
-			}]
+			"patterns": [{ "include": "#block-name"}, { "include":"#paren-expression" }, { "include":"#action-props" }]
 		},
 		"keywords": {
 			"patterns": [{
@@ -35,6 +32,30 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"block-name":{
+			"patterns": [{
+				"name": "constant.character.escape.psl",
+				"match": "\\b(DEFAULT|SUCCESS|EXIT)\\b"
+			}]
+		},
+		"action-props":{
+			"patterns": [{
+				"name": "keyword.other.psl",
+				"match": "\\b(Action|Message|AlertType|YesButtonTitle|NoButtonTitle|VarName|AppendText|VaValue|Condition|ExcludeFields|ObjectType|SortClause|MatchFields|ActionShouldComplete|ActionShouldDisplay|Subject|QueryString|QueryReturnFields|QueryTest|QueryTestTrue|QueryTestFalse)\\b"
+			}]
+		},
+		"paren-expression": {
+		  "begin": "\\{",
+		  "end": "\\}",
+		  "beginCaptures": {
+			"0": { "name": "punctuation.paren.open" }
+		  },
+		  "endCaptures": {
+			"0": { "name": "punctuation.paren.close" }
+		  },
+		  "name": "expression.group",
+		  "patterns": [{ "include": "#blocks" }]
 		}
 	},
 	"scopeName": "source.psl"
